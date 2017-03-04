@@ -1,0 +1,10 @@
+{
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "ramda"
+    ],
+    "compact": false,
+    "comments": true
+}

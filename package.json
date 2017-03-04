@@ -1,0 +1,44 @@
+{
+  "name": "service-state-string",
+  "version": "0.0.1",
+  "description": "One succint string to expess an intent across applications",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "test": "karma start",
+    "build": "webpack --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biggestT/service-state-string.git"
+  },
+  "keywords": [
+    "intent",
+    "service",
+    "application-state",
+    "state",
+    "string"
+  ],
+  "author": "Tor Nilsson Öhrn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biggestT/service-state-string/issues"
+  },
+  "homepage": "https://github.com/biggestT/service-state-string#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-ramda": "^1.1.6",
+    "babel-preset-es2015": "^6.22.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-webpack": "^2.0.2",
+    "phantomjs-prebuilt": "^2.1.14",
+    "ramda": "^0.23.0",
+    "webpack": "^2.2.1"
+  }
+}
