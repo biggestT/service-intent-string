@@ -7,7 +7,8 @@ One succint string to expess an intent across applications.
 >It is basically a passive data structure holding an abstract description of an action to be performed.
 >[developers.android]
 
-This is an intent format for multi-app services that can be passed around in e.g an URL query param or fragment.
+This is an intent format for multi-app services that can be passed to an application in e.g an URL query param or fragment 
+and then be parsed into a specific state within that application.
 
 ## Features
 - URI-component safe, i.e `window.encodeURIComponent(ServiceIntentString) === ServiceIntentString`
@@ -20,22 +21,23 @@ This is an intent format for multi-app services that can be passed around in e.g
 ## Idea
 Construct simple natural-language-inspired sentences to describe an intent.
 By constructing a simple [Subject-verb-object](https://en.wikipedia.org/wiki/Subject%E2%80%93verb%E2%80%93object) 
-"sentence" we should be able to express most possible intents.
+"sentence" we should be able to express most possible intents. Only here we substitute subject with "actor" and verb 
+with "action" to narrow things down a bit more to an application-context.
 
-**SUBJECT** +  **VERB** + **OBJECT**
+**ACTOR** +  **ACTION** + **OBJECT**
 
-If no **OBJECT** -> assume subject want's to act on itself.
+If no **OBJECT** -> assume actor want's to act on itself.
 
 `.` delimiter is used between subject/verb/object.
 
-### Subject
+### Actor
 An actor within a service. Alphanumeric strings to the right of `_` delimiter are more-specific actor identifiers. 
 - `user`
 - `user_82323`
 - `user_non-paying`
 - `administrator`
 
-### Verb
+### Action
 Something an actor can do
 - `view`
 - `pay`
@@ -49,17 +51,16 @@ Something an actor can act on. Alphanumeric strings to the right of `_` delimite
 
 ### Examples
 Known user wants to pay a specific invoice
+- `user_3291.pay.invoice_432432`
 
-`user_3291.pay.invoice_432432`
 Unknown user wants to see it's profile
+- `user.view`
 
-`user.view`
 Administrator wants to configure a specific user
+- `administrator_290392.configure.user_294382`
 
-`administrator_290392.configure.user_294382`
 Unknown user wants to view specific company
-
-`user.view.company_829839`
+- `user.view.company_829839`
 
 
 [developers.android]: https://developer.android.com/reference/android/content/Intent.html
