@@ -1,15 +1,23 @@
-export { parse };
+import { compose, split } from './utils.js';
 
-function parse (state) {
+export { parseIntent, parseComponent };
 
-  const parts = (separator, string) => string.split(separator);
+function parseIntent (state) {
 
-  const intentParts = (intent) => parts('.', intent);
+  const intentParts = (intent) => split('.', intent);
 
-  const wordParts = (word) => parts('_', word);
+  const intentObject = (parts) => ({
+    actor: parts[0],
+    state: parts[1],
+    object: parts[2] || parts[0]
+  });
 
-  return intentParts(state).map(wordParts);
-
+  return compose(intentObject, intentParts)(state);
 }
 
+function parseComponent (component) {
 
+  const wordParts = (word) => split('_', word);
+
+  return compose(wordParts)(component);
+}

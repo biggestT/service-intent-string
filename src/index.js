@@ -1,1 +1,1 @@
-import { parse } from './parse.js';
+import { parseComponent, parseIntent  } from './parse.js';

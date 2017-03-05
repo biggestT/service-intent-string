@@ -1,4 +1,4 @@
-import { parse } from './parse.js';
+import { parseComponent, parseIntent  } from './parse.js';
 
 describe('service-intent-string', function () {
 
@@ -6,17 +6,27 @@ describe('service-intent-string', function () {
 
     const intent = 'user.view.company_829839';
 
-    const [
-      [actorType, actorKey],
-      [state],
-      [objectType, objectKey]
-    ] = parse(intent);
+    const {
+      actor,
+      state,
+      object
+    } = parseIntent(intent);
 
-    expect(actorType).toEqual('user');
-    expect(actorKey).toBe(undefined);
+    expect(actor).toEqual('user');
     expect(state).toEqual('view');
-    expect(objectType).toEqual('company');
-    expect(objectKey).toEqual('829839');
+    expect(object).toEqual('company_829839');
+
+  });
+
+  it('should parse an intent object component', function () {
+
+    const component = 'user_non-paying_123';
+
+    const [type, category, id] = parseComponent(component);
+
+    expect(type).toEqual('user');
+    expect(category).toEqual('non-paying');
+    expect(id).toEqual('123');
 
   });
 
