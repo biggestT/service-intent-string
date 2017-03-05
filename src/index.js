@@ -1,1 +1,1 @@
-import { Parser } from './parser.js';
+import { parse } from './parse.js';

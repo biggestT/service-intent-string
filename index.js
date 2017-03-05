@@ -76,28 +76,24 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Parser = Parser;
+exports.parse = parse;
 
 
-function Parser() {
+function parse(state) {
 
-  return Object.freeze({
-    actor: actor,
-    action: action,
-    object: object
-  });
+  var parts = function parts(separator, string) {
+    return string.split(separator);
+  };
 
-  function actor(state) {
-    return state.split('.')[0];
-  }
+  var intentParts = function intentParts(intent) {
+    return parts('.', intent);
+  };
 
-  function action(state) {
-    return getSubject(state).split('_')[0];
-  }
+  var wordParts = function wordParts(word) {
+    return parts('_', word);
+  };
 
-  function object(state) {
-    return getSubject(state).split('_')[1];
-  }
+  return intentParts(state).map(wordParts);
 }
 
 /***/ }),
@@ -107,7 +103,7 @@ function Parser() {
 "use strict";
 
 
-var _parser = __webpack_require__(0);
+var _parse = __webpack_require__(0);
 
 /***/ })
 /******/ ]);

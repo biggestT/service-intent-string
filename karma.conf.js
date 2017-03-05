@@ -5,7 +5,7 @@ module.exports = function(config) {
       'src/test.js'
     ],
     preprocessors: {
-      'src/test.js': ['webpack']
+      'src/test.js': ['webpack', 'sourcemap']
     },
     webpack: require('./webpack.config.js'),
     reporters: ['progress'],
