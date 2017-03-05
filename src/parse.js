@@ -17,7 +17,7 @@ function parseIntent (state) {
 
 function parseComponent (component) {
 
-  const wordParts = (word) => split('_', word);
+  const componentParts = (component) => split('_', component);
 
-  return compose(wordParts)(component);
+  return compose(componentParts)(component);
 }

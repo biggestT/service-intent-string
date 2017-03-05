@@ -1,5 +1,5 @@
 {
-  "name": "service-state-string",
+  "name": "service-intent-string",
   "version": "0.0.1",
   "description": "One succint string to expess an intent across applications",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/biggestT/service-state-string.git"
+    "url": "git+https://github.com/biggestT/service-intent-string.git"
   },
   "keywords": [
     "intent",
@@ -22,9 +22,9 @@
   "author": "Tor Nilsson Öhrn",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/biggestT/service-state-string/issues"
+    "url": "https://github.com/biggestT/service-intent-string/issues"
   },
-  "homepage": "https://github.com/biggestT/service-state-string#readme",
+  "homepage": "https://github.com/biggestT/service-intent-string#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -39,7 +39,6 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.2",
     "phantomjs-prebuilt": "^2.1.14",
-    "ramda": "^0.23.0",
     "webpack": "^2.2.1"
   }
 }
