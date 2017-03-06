@@ -1,5 +1,5 @@
 # service-intent-string
-One succint string to expess an intent across applications.
+One succint string to expess an intent across web applications.
 
 >An intent is an abstract description of an operation to be performed.
 >An Intent provides a facility for performing late runtime binding between the code in different applications. 
@@ -32,22 +32,13 @@ If no **OBJECT** -> assume actor want's to act on itself.
 
 ### Actor
 An actor within a service. Alphanumeric strings to the right of `_` delimiter are more-specific actor identifiers. 
-- `user`
-- `user_82323`
-- `user_non-paying`
-- `administrator`
 
 ### Action
 Something an actor can do
-- `view`
-- `pay`
-- `configure`
-- `onboard`
 
 ### Object
 Something an actor can act on. Alphanumeric strings to the right of `_` delimiter are more-specific object identifiers.
-- `company`
-- `invoice_13452`
+
 
 ### Examples
 Known user wants to pay a specific invoice
@@ -61,6 +52,35 @@ Administrator wants to configure a specific user
 
 Unknown user wants to view specific company
 - `user.view.company_829839`
+
+
+## Installation
+
+``` bash
+npm install service-intent-string --save
+```
+
+## Usage
+
+``` javascript
+## Outgoing
+import { serializeIntent } from 'service-intent-string';
+
+const intentParam = serializeIntent({
+    actor: 'user',
+    action: 'configure',
+    object: 'notifications'
+});
+
+window.location.href = `another-app-within-service.com#intent=${intentParam}`
+
+## Incoming
+import { parseIntent } from 'service-intent-string';
+
+const intent = parseIntent(methdoToGetFragmentFromUrl('intent'));
+
+# have app translate intent.actor, intent.action and intent.object into an internal state ...
+```
 
 
 [developers.android]: https://developer.android.com/reference/android/content/Intent.html

@@ -8,12 +8,12 @@ describe('service-intent-string', function () {
 
     const {
       actor,
-      state,
+      action,
       object
     } = parseIntent(intent);
 
     expect(actor).toEqual('user');
-    expect(state).toEqual('view');
+    expect(action).toEqual('view');
     expect(object).toEqual('company_829839');
 
   });

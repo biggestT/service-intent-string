@@ -8,7 +8,7 @@ function parseIntent (state) {
 
   const intentObject = (parts) => ({
     actor: parts[0],
-    state: parts[1],
+    action: parts[1],
     object: parts[2] || parts[0]
   });
 

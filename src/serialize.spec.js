@@ -6,7 +6,7 @@ describe('service-intent-string', function () {
 
     const intent = {
       actor: 'user',
-      state: 'view',
+      action: 'view',
       object: 'company_829839'
     };
 
