@@ -1,6 +1,6 @@
 {
   "name": "service-intent-string",
-  "version": "0.0.2-2",
+  "version": "0.0.2-3",
   "description": "One succint string to expess an intent across applications",
   "main": "index.js",
   "scripts": {
