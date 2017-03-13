@@ -1,4 +1,4 @@
-import { parseComponent, parseIntent  } from './parse.js';
+import { parseComponent, parseIntent, parseFragment  } from './parse.js';
 
 describe('service-intent-string', function () {
 
@@ -27,6 +27,22 @@ describe('service-intent-string', function () {
     expect(type).toEqual('user');
     expect(category).toEqual('non-paying');
     expect(id).toEqual('123');
+
+  });
+
+  it('should parse a fragment string', function () {
+
+    const intent = 'user.offboard.user';
+
+    const fragment1 = 'bs=testbs&intent='+intent+'&bs2=testbs2';
+    const fragment2 = 'intent='+intent+'&bs2=testbs2';
+    const fragment3 = 'bs=testbs&bs2=testbs2&intent='+intent;
+    const fragment4 = 'bs=testbs&bs2=testbs2';
+
+    expect(parseFragment(fragment1)).toEqual(intent);
+    expect(parseFragment(fragment2)).toEqual(intent);
+    expect(parseFragment(fragment3)).toEqual(intent);
+    expect(parseFragment(fragment4)).toEqual(null);
 
   });
 
