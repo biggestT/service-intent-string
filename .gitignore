@@ -3,3 +3,4 @@ node_modules/
 /sis.js.map
 *.tgz
 *.log
+./index.js
