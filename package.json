@@ -3,10 +3,14 @@
   "version": "0.0.2-3",
   "description": "One succint string to expess an intent across applications",
   "main": "index.js",
+  "files": [
+    "sis.js",
+    "sis.min.js"
+  ],
   "scripts": {
     "start": "npm run build",
     "test": "karma start",
-    "build": "webpack --bail"
+    "build": "webpack --bail && webpack --config webpack.global-export.js"
   },
   "repository": {
     "type": "git",
