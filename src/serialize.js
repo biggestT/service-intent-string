@@ -4,7 +4,7 @@ export { serializeComponent, serializeIntent };
 
 function serializeIntent (intent) {
 
-  const intentString = (obj) => `${obj.actor}.${obj.action}.${obj.object}`;
+  const intentString = (obj) => `${obj.actor}.${obj.action}.${obj.object || obj.actor}`;
 
   return compose(intentString)(intent);
 

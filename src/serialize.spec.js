@@ -13,6 +13,16 @@ describe('service-intent-string', function () {
     expect(serializeIntent(intent)).toEqual('user.view.company_829839');
   });
 
+  it('should serialize a object-less intent', function () {
+
+    const intent = {
+      actor: 'user',
+      action: 'view'
+    };
+
+    expect(serializeIntent(intent)).toEqual('user.view.user');
+  });
+
   it('should serialize a component', function () {
 
     const component = ['user', 'premium', '123'];

@@ -7,7 +7,16 @@ module.exports = function(config) {
     preprocessors: {
       'src/test.js': ['webpack', 'sourcemap']
     },
-    webpack: require('./webpack.config.js'),
+    webpack: {
+      devtool: 'inline-source-map',
+      module: {
+        rules: [{
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          use: [ 'babel-loader' ]
+        }]
+      }
+    },
     reporters: ['progress'],
     logLevel: config.LOG_INFO,
     browsers: ['PhantomJS'],
