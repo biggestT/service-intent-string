@@ -5,6 +5,7 @@
   "main": "sis.js",
   "files": [
     "sis.js",
+    "sis.node.js",
     "sis.min.js"
   ],
   "scripts": {
