@@ -2,10 +2,9 @@
   "name": "service-intent-string",
   "version": "0.0.2-7",
   "description": "One succint string to expess an intent across applications",
-  "main": "sis.node.js",
+  "main": "sis.js",
   "files": [
     "sis.js",
-    "sis.node.js",
     "sis.min.js"
   ],
   "scripts": {
