@@ -2,7 +2,7 @@
   "name": "service-intent-string",
   "version": "0.0.2-7",
   "description": "One succint string to expess an intent across applications",
-  "main": "sis.js",
+  "main": "sis.node.js",
   "files": [
     "sis.js",
     "sis.node.js",
@@ -11,7 +11,7 @@
   "scripts": {
     "start": "npm run build",
     "test": "karma start",
-    "build": "webpack --bail && webpack --config webpack.global-export.js"
+    "build": "webpack --bail"
   },
   "repository": {
     "type": "git",

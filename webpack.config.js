@@ -11,16 +11,6 @@ const moduleConf = {
   }]
 };
 
-const configCommonJs = {
-  context,
-  entry,
-  module: moduleConf,
-  output: {
-    filename: 'sis.node.js',
-    libraryTarget: 'commonjs'
-  }
-};
-
 const configLegacy = {
   context,
   entry,
@@ -48,13 +38,12 @@ const config = {
   output: {
     filename: 'sis.js',
     library: 'service-intent-string',
-    libraryTarget: 'amd'
+    libraryTarget: 'commonjs'
   }
 };
 
 module.exports = [
   config,
-  configLegacy,
-  configCommonJs
+  configLegacy
 ];
 
