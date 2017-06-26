@@ -37,7 +37,6 @@ const config = {
   module: moduleConf,
   output: {
     filename: 'sis.js',
-    library: 'service-intent-string',
     libraryTarget: 'commonjs'
   }
 };
