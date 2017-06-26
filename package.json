@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npm run build",
     "test": "karma start",
-    "build": "webpack --bail && webpack --config webpack.global-export.js"
+    "build": "webpack --bail"
   },
   "repository": {
     "type": "git",
